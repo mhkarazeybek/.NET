@@ -1,0 +1,23 @@
+﻿@using EntityLayer
+@model IEnumerable<Product>
+
+<div class="tab-content" style="display:block;">
+    <div class="items">
+        <div class="cl">&nbsp;</div>
+        <ul>
+            @foreach (Product item in Model)
+            {
+                <li>
+                    <div class="image">
+                        <a href="~/Home/Detail/@item.ProductId"><img src="~/Upload/@item.Photo" alt="" height="100"/></a>
+                    </div>
+                    <p>
+                        <span>@item.ProductName</span><br />
+                    </p>
+                    <p class="price"> Price: <strong>@item.Price.Value.ToString("#.##") ₺</strong></p>
+                </li>
+            }
+        </ul>
+        <div class="cl">&nbsp;</div>
+    </div>
+</div>

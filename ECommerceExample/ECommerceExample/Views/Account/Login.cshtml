@@ -1,0 +1,45 @@
+﻿@model EntityLayer.Member
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+<title>Login</title>
+<link href="~/Content/startbootstrap-sb-admin-gh-pages/css/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Content/startbootstrap-sb-admin-gh-pages/js/jquery.js"></script>
+<script src="~/Content/startbootstrap-sb-admin-gh-pages/js/bootstrap.min.js"></script>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Login Paneli
+    </div>
+    <div class="panel-body">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="input-group">
+                @Html.TextBoxFor(x => x.Email, new { @placeholder = "E-Posta Adresiniz", @class = "form-control" })
+                <div class="input-group-addon">
+                    <i class="glyphicon glyphicon-user"></i>
+                </div>
+            </div>
+            <span class="text-danger">
+                @Html.ValidationMessageFor(x => x.Email)
+            </span>
+            <br />
+            <div class="input-group">
+                @Html.PasswordFor(x => x.Password, new { @placeholder = "Parola Giriniz", @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.Password)
+                <div class="input-group-addon">
+                    <i class="glyphicon glyphicon-lock"></i>
+                </div>
+            </div>
+            <span>
+                @Html.ValidationMessageFor(x => x.Password)
+            </span>
+            <br />
+            <div class="row" style="margin:10px">
+                <a class="btn btn-primary" href="~/Account/SignIn">SıgnIn</a>
+                <input class="btn btn-success pull-right" type="submit" name="name" value="Login" />
+            </div>
+        }
+    </div>
+</div>

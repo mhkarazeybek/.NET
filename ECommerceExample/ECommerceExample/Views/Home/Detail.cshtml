@@ -1,0 +1,29 @@
+﻿@using EntityLayer
+@model Product
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h2>Detail</h2>
+
+<div>@Html.DisplayFor(m => m.ProductName)</div>
+
+    <div>
+        <div>
+            <a>            
+                <img src="~/Upload/@Model.Photo" alt="" border="0" width="92" height="92" />
+            </a>
+        </div>
+        <div class="details_big_box">
+            <div>@Html.DisplayFor(m => m.ProductName)</div>
+            <div>
+                Stock: <span>@Html.DisplayFor(m => m.Stock)</span><br />
+                Garantie: <span>24 month</span><br />
+                Category: <span>@Html.DisplayFor(m => m.Category.CategoryName)</span><br />
+                Brand: <span>@Html.DisplayFor(m => m.Brand.BrandName)</span><br />
+            </div>
+            <div><span >@Html.DisplayFor(m => m.Price)</span></div>
+        </div>
+    </div>

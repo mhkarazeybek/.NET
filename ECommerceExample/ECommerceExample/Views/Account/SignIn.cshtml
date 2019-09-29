@@ -1,0 +1,57 @@
+﻿@model EntityLayer.Member
+@{
+    ViewBag.Title = "SignIn";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<link href="~/Content/startbootstrap-sb-admin-gh-pages/css/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Content/startbootstrap-sb-admin-gh-pages/js/jquery.js"></script>
+<script src="~/Content/startbootstrap-sb-admin-gh-pages/js/bootstrap.min.js"></script>
+<h2>AddMember</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Member</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FirstName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FirstName)
+            @Html.ValidationMessageFor(model => model.FirstName)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LastName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LastName)
+            @Html.ValidationMessageFor(model => model.LastName)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Password)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Password)
+            @Html.ValidationMessageFor(model => model.Password)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Address)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Address)
+            @Html.ValidationMessageFor(model => model.Address)
+        </div>
+        <p>
+            <input class="btn btn-success" type="submit" value="Create" />
+        </p>
+    </fieldset>
+}

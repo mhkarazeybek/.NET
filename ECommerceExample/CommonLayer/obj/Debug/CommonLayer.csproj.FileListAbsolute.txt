@@ -1,0 +1,15 @@
+C:\Users\MHKARAZEYBEK\Documents\Github\.NET\ECommerceExample\CommonLayer\bin\Debug\CommonLayer.dll.config
+C:\Users\MHKARAZEYBEK\Documents\Github\.NET\ECommerceExample\CommonLayer\bin\Debug\CommonLayer.dll
+C:\Users\MHKARAZEYBEK\Documents\Github\.NET\ECommerceExample\CommonLayer\bin\Debug\CommonLayer.pdb
+C:\Users\MHKARAZEYBEK\Documents\Github\.NET\ECommerceExample\CommonLayer\bin\Debug\EntityFramework.dll
+C:\Users\MHKARAZEYBEK\Documents\Github\.NET\ECommerceExample\CommonLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\MHKARAZEYBEK\Documents\Github\.NET\ECommerceExample\CommonLayer\bin\Debug\EntityLayer.dll
+C:\Users\MHKARAZEYBEK\Documents\Github\.NET\ECommerceExample\CommonLayer\bin\Debug\EntityLayer.pdb
+C:\Users\MHKARAZEYBEK\Documents\Github\.NET\ECommerceExample\CommonLayer\bin\Debug\EntityLayer.dll.config
+C:\Users\MHKARAZEYBEK\Documents\Github\.NET\ECommerceExample\CommonLayer\bin\Debug\EntityFramework.xml
+C:\Users\MHKARAZEYBEK\Documents\Github\.NET\ECommerceExample\CommonLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\MHKARAZEYBEK\Documents\Github\.NET\ECommerceExample\CommonLayer\obj\Debug\CommonLayer.csprojAssemblyReference.cache
+C:\Users\MHKARAZEYBEK\Documents\Github\.NET\ECommerceExample\CommonLayer\obj\Debug\CommonLayer.csproj.CoreCompileInputs.cache
+C:\Users\MHKARAZEYBEK\Documents\Github\.NET\ECommerceExample\CommonLayer\obj\Debug\CommonLayer.csproj.CopyComplete
+C:\Users\MHKARAZEYBEK\Documents\Github\.NET\ECommerceExample\CommonLayer\obj\Debug\CommonLayer.dll
+C:\Users\MHKARAZEYBEK\Documents\Github\.NET\ECommerceExample\CommonLayer\obj\Debug\CommonLayer.pdb

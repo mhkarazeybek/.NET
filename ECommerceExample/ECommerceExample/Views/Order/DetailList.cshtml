@@ -1,0 +1,58 @@
+﻿@using EntityLayer
+@model IEnumerable<OrderDetail>
+
+@{
+    ViewBag.Title = "DetailList";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h2>DetailList</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "Delete", new { id = item.ProductId })
+            </td>
+        </tr>
+    }
+    <tr>
+        <td colspan="5" style="text-align:right">
+            @{
+
+                Order o = (Order)Session["Order"];
+                <span>Total:</span>@o.TotalPrice.Value.ToString()
+
+            }
+        </td>
+    </tr>
+
+</table>
+<form method="get" action="~/Payment/Pay">
+    <input type="submit" value="Continue To Pay" />
+</form>

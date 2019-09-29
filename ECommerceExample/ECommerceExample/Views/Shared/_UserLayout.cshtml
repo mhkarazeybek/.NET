@@ -1,0 +1,154 @@
+﻿@using RepositoryLayer
+@using EntityLayer
+@model IEnumerable<Product>
+@{
+
+    Layout = null;
+
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>ECommerce</title>
+    <link href="~/Content/View/css/style.css" rel="stylesheet" />
+    <!--[if lte IE 6]>
+        <style type="text/css" media="screen">
+            .tabbed { height:420px; }
+        </style>
+    <![endif]-->
+
+    <script src="~/Content/View/js/jquery-1.4.1.min.js"></script>
+    <script src="~/Content/View/js/jquery-func.js"></script>
+    <script src="~/Content/View/js/jquery.jcarousel.pack.js"></script>
+    <script src="~/Content/View/js/jquery.slide.js"></script>
+
+</head>
+<body>
+    <!-- Top -->
+    <div id="top">
+
+        <div class="shell">
+            <!-- Header -->
+            <div id="header">
+                <br />
+                <h1><a href="#">ECommerce Example</a></h1>
+                <div id="navigation">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">The Store</a></li>
+                        <li class="last"><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- End Header -->
+            <!-- Slider -->
+            <div id="slider">
+                <div id="slider-holder" style="align-content:center">
+                    <ul>
+                        @{
+                            ProductRepository pr = new ProductRepository();
+                            List<Product> proList = pr.GetLatestObj(5).ProcessResult;
+                            foreach (Product item in proList)
+                            {
+                                <li ><a  href="~/Home/Detail/@item.ProductId"><img src="~/Upload/@item.Photo" alt="" height="300" /> <p style="font-size:large">@item.ProductName</p></a></li>
+                                
+                            }
+                        }
+
+                    </ul>
+                </div>
+                <div id="slider-nav">
+                    <a href="#" class="prev">Previous</a>
+                    <a href="#" class="next">Next</a>
+                </div>
+            </div>
+            <!-- End Slider -->
+
+        </div>
+    </div>
+    <!-- Top -->
+    <!-- Main -->
+    <div id="main">
+        <div class="shell">
+
+            <!-- Search, etc -->
+            <div class="options">
+                <div class="search">
+                    <form action="" method="post">
+                        <span class="field"><input type="text" class="blink" value="SEARCH" title="SEARCH" /></span>
+                        <input type="text" class="search-submit" value="GO" />
+                    </form>
+                </div>
+
+                <div class="right">
+                    <span class="cart">
+                        <a href="#" class="cart-ico">&nbsp;</a>
+                        <strong>$0.00</strong>
+                    </span>
+                    <span class="left more-links">
+                    </span>
+                </div>
+            </div>
+            <!-- End Search, etc -->
+            <!-- Content -->
+            <div id="content">
+
+                <!-- Container -->
+                <div id="container" style="flex-direction:row">
+
+                    <!-- Brands -->
+                    <div class="brands">
+                        <h2>Brands</h2>
+                        <br />
+                        <div class="logos">
+
+                            @{
+                                BrandRepository br = new BrandRepository();
+                                foreach (Brand item in br.List().ProcessResult)
+                                {
+                                    <a href="~/Home/ListByBrand/@item.BrandId"><img src="~/Upload/@item.Photo" alt="" height="50" /></a>
+                                }
+
+                            }
+                        </div>
+                    </div>
+                    <!-- End Brands -->
+
+                    <div class="tabbed">
+                        <br />
+                        @RenderBody()
+                    </div>
+
+
+                    <!-- Footer -->
+                    <div id="footer">
+                        <div class="left">
+                            <a href="#">Home</a>
+                            <span>|</span>
+                            <a href="#">Support</a>
+                            <span>|</span>
+                            <a href="#">My Account</a>
+                            <span>|</span>
+                            <a href="#">The Store</a>
+                            <span>|</span>
+                            <a href="#">Contact</a>
+                        </div>
+                    </div>
+                    <!-- End Footer -->
+
+                </div>
+                <!-- End Container -->
+
+            </div>
+            <!-- End Content -->
+
+        </div>
+    </div>
+    <!-- End Main -->
+
+</body>
+</html>
